@@ -10,7 +10,7 @@ feature {ANY}
          hu_integer_32 := 0
          hu_integer_16 := 0
          hu_integer_8 := 0
-         if s.has_prefix("0x") or s.has_prefix("0X") then
+         if s.has_prefix(once "0x") or s.has_prefix(once "0X") then
             s.remove_head(2)
          end
 
