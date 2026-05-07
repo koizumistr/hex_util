@@ -28,16 +28,16 @@ feature {ANY}
 
    test (str: STRING)
       do
-         std_output.put_string(str + once " -> ")
+         std_output.put_string(once "input: " + str + once "%N")
          hu_parse(str)
-         std_output.put_character('[')
+         std_output.put_string(once " hu_parsed: ")
          std_output.put_integer(hu_parsed)
-         std_output.put_character(']')
          std_output.put_new_line
-         std_output.put_string(once "   8: " + hu_integer_8.to_string + once "%N")
-         std_output.put_string(once "  16: " + hu_integer_16.to_string + once "%N")
-         std_output.put_string(once "  32: " + hu_integer_32.to_string + once "%N")
-         std_output.put_string(once "  64: " + hu_integer_64.to_string + once "%N")
+         std_output.put_string(once " hu_integer_8:  " + hu_integer_8.to_string + once "%N")
+         std_output.put_string(once " hu_integer_16: " + hu_integer_16.to_string + once "%N")
+         std_output.put_string(once " hu_integer_32: " + hu_integer_32.to_string + once "%N")
+         std_output.put_string(once " hu_integer_64: " + hu_integer_64.to_string + once "%N")
+         std_output.put_string(once "===============%N")
       end
 
 end -- class HEX_UTIL_TEST
