@@ -2,6 +2,8 @@ class HEX_UTIL
 
 feature {ANY}
    hu_parse (s: STRING)
+      require
+         string_attached: s /= Void
       local
          i: INTEGER; c: CHARACTER; bad_char: BOOLEAN
       do
@@ -21,9 +23,7 @@ feature {ANY}
                i > s.upper or bad_char
             loop
                c := s.item(i)
-               if c.is_digit then
-                  hu_integer_64 := hu_integer_64 * 16 + c.value
-               elseif c.is_hexadecimal_digit then
+               if c.is_hexadecimal_digit then
                   hu_integer_64 := hu_integer_64 * 16 + c.hexadecimal_value
                else
                   bad_char := True
